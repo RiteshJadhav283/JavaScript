@@ -270,66 +270,37 @@ Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo
 Ans - (a) parseInt()  
 Reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt
 
-1. Why is using let safer than var?
-Answer:
-Using let is considered safer and more modern than var for several reasons. The most important is scope: variables declared with let are block-scoped, meaning they only exist within the block (like inside loops or conditionals) where they are declared. This prevents variables from leaking into the wider function or global scope, reducing the risk of accidental overwrites and bugs.
-In contrast, var is function-scoped or globally scoped, so a var variable declared inside a block can be accessed outside of it, which can cause confusion and errors.
-Additionally, let does not allow redeclaring the same variable within the same block, which helps catch mistakes early.
-Using let (and const for constants) is now encouraged as a best practice in JavaScript for these reasons.
+---
 
-References:
-https://www.w3schools.com/js/js_let.asp
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
+**1. What is asynchronous programming in JavaScript and why is it important?**
 
-2. What is the main benefit of separating JavaScript from HTML?
-Answer:
-Separating JavaScript from HTML offers several major benefits for web development.
-First, maintainability: when JavaScript code is kept in separate files or sections, it is much easier to update, debug, and maintain the codebase.
-Second, reusability: the same JavaScript logic can be reused across multiple HTML pages, reducing duplication and making updates more efficient.
-Third, separation of concerns: this principle encourages keeping different aspects of a project (like structure, style, and behavior) separate, which makes both HTML and JavaScript easier to read and manage.
-Fourth, performance: browsers can cache external JavaScript files, leading to faster page loads for return visitors.
-Finally, collaboration: separating code makes it easier for different team members to work on HTML and JavaScript independently.
+Asynchronous programming in JavaScript lets your code start a long task (like fetching data from a server) and keep running other code while waiting for that task to finish. This means your app stays responsive and doesn’t freeze or block the user while waiting for things like network responses or timers. It’s important because JavaScript runs on a single thread, so without async techniques, slow tasks would block everything else, making for a poor user experience.  
+Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Introducing
 
-References:
-https://www.w3schools.com/js/js_whereto.asp
-https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript
+---
 
-3. Why is Math.random() useful in games or UI effects?
-Answer:
-Math.random() is a built-in JavaScript function that generates a pseudo-random floating-point number between 0 (inclusive) and 1 (exclusive).
-In games, this function is essential for creating unpredictability: for example, randomizing enemy behavior, item drops, or character movement.
-For UI effects, Math.random() can be used to animate elements in interesting and varied ways, such as randomizing transitions, colors, or positions.
-By combining Math.random() with other functions (like Math.floor()), you can generate random integers for use in arrays, simulations, or user interactions.
-Overall, Math.random() makes digital experiences feel more dynamic, lively, and engaging by introducing controlled randomness.
+**2. How does JavaScript handle asynchronous tasks if it is single-threaded?**
 
-References:
-https://www.geeksforgeeks.org/javascript-math-random-method/
-https://www.w3schools.com/js/js_random.asp
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+JavaScript uses the event loop, callbacks, and APIs provided by the browser (or Node.js) to handle async tasks. When you start an async operation, JavaScript can move on to other things, and when the task finishes, it puts the result back into the main thread to be handled. This allows JavaScript to multitask efficiently, even though it runs on just one thread.  
+Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS
 
-4. What happens if two event listeners are attached to the same element?
-Answer:
-When two (or more) event listeners are attached to the same element for the same event, both listeners will be triggered when the event occurs.
-For example, if you add two "click" event listeners to a button, clicking the button will run both functions.
-By default, the order of execution is the order in which the listeners were added (the first added runs first, then the second, and so on).
-This behavior allows developers to modularize event handling, making it possible to have multiple independent functions respond to the same event.
-It is also possible to control the execution order further using the useCapture parameter or by removing and re-adding listeners if needed.
+---
 
-References:
-https://www.geeksforgeeks.org/javascript-addeventlistener-with-examples/
-https://www.w3schools.com/js/js_htmldom_eventlistener.asp
-https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+**3. What are some common examples of asynchronous operations in JavaScript?**
 
-5. Why should we use functions to organize code?
-Answer:
-Functions are fundamental tools for organizing code in JavaScript.
-Modularity: Functions allow you to break down complex problems into smaller, manageable pieces, making code easier to read, debug, and maintain.
-Reusability: Once a function is written, it can be called multiple times from different parts of the program, reducing repetition and making updates easier.
-Abstraction: Functions hide the details of how a task is performed, allowing you to focus on what the code does rather than how it does it.
-Encapsulation: Functions can keep variables and logic contained, preventing unintended side effects from affecting other parts of the program.
-Collaboration: Well-organized functions make it easier for teams to work together, as different members can work on separate functions independently.
-Overall, using functions leads to cleaner, more efficient, and more scalable code.
+Common async operations include making HTTP requests (like with `fetch()`), using timers (`setTimeout()` and `setInterval()`), reading files (in Node.js), and responding to user events like clicks or key presses. All these tasks can take time, so they run asynchronously to keep the app responsive.  
+Reference: https://www.w3schools.com/js/js_asynchronous.asp
 
-References:
-https://www.w3schools.com/js/js_functions.asp
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions
+---
+
+**4. What is a callback, and what problem can it cause?**
+
+A callback is a function passed to another function to run after an async task finishes. While callbacks are simple, using many of them together (nested callbacks) can make code messy and hard to read, a problem known as “callback hell.”  
+Reference: https://dev.to/million_formula_3be3d915d/understanding-asynchronous-programming-in-javascript-bk9
+
+---
+
+**5. What are Promises and async/await, and how do they help with asynchronous code?**
+
+Promises are objects that represent the eventual result of an async operation. They make it easier to handle success and errors without deep nesting. `async/await` is a newer syntax that lets you write async code that looks more like regular, synchronous code, making it easier to read and maintain.  
+Reference: https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS
