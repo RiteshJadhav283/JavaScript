@@ -4,26 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DOM Traversal Practice</title>
-  <style>
-    .highlight {
-      background: yellow;
-    }
-    .parent {
-      border: 2px solid #333;
-      padding: 10px;
-      margin: 10px 0;
-    }
-    .child {
-      border: 1px dashed #666;
-      margin: 5px;
-      padding: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>DOM Traversal Examples</h1>
 
-  <!-- 1. Nested div structure -->
   <div class="parent" id="parent1">
     Parent Div 1
     <div class="child" id="child1">Child Div 1
@@ -32,13 +17,10 @@
     <div class="child" id="child2">Child Div 2</div>
   </div>
 
-  <!-- 2. parentElement example -->
   <button onclick="logParent()">Log Parent of #child1</button>
 
-  <!-- 3. .children example -->
   <button onclick="logChildren()">Log Children of #parent1</button>
 
-  <!-- 4. .closest() example -->
   <div class="parent special" id="parent2">
     Parent Div 2 (with class 'special')
     <div class="child" id="child3">
@@ -46,45 +28,12 @@
     </div>
   </div>
 
-  <!-- 5. Toggle class on parent when clicking child button -->
   <div class="parent" id="parent3">
     Parent Div 3
     <button onclick="toggleHighlight(this)">Toggle Highlight on Parent</button>
   </div>
 
-  <script>
-    // 2. parentElement
-    function logParent() {
-      const child = document.getElementById('child1');
-      console.log('Parent of #child1:', child.parentElement);
-    }
+  <script src="script.js"></script>
 
-    // 3. .children
-    function logChildren() {
-      const parent = document.getElementById('parent1');
-      console.log('Children of #parent1:', parent.children);
-    }
-
-    // 4. .closest()
-    function findClosestSpecial(btn) {
-      const closestSpecial = btn.closest('.special');
-      console.log('Closest .special parent:', closestSpecial);
-    }
-
-    // 5. Toggle class on parent
-    function toggleHighlight(btn) {
-      const parent = btn.parentElement;
-      parent.classList.toggle('highlight');
-    }
-  </script>
-
-  <!--
-    Notes & Definitions:
-    1. HTML nesting forms a DOM tree, where elements are parents/children/siblings.
-    2. parentElement returns the parent node of an element.
-    3. .children returns only element children; .childNodes returns all node types.
-    4. .closest(selector) finds the nearest ancestor (or self) matching the selector.
-    5. Event listeners can trigger classList.toggle to add/remove classes dynamically.
-  -->
 </body>
 </html> 

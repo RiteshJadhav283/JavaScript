@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #181818;
+    color: #f0f0f0;
+    padding: 2rem;
+}
+.controls button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+.current-time {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #ffd700;
+}

@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; background: #181818; color: #f0f0f0; padding: 2rem; }
+.section { margin-bottom: 2rem; }
+button { margin: 0.5rem 0.5rem 0.5rem 0; padding: 0.5rem 1rem; font-size: 1rem; }
+.output { color: #ffd700; font-size: 1.1rem; margin-top: 0.5rem; }
+code { background: #222; color: #ff6; padding: 2px 6px; border-radius: 4px; }
