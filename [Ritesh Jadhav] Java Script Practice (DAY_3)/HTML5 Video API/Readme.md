@@ -1,5 +1,5 @@
 ### **1. Basic Video Element Usage**  
-The <video> element embeds media players with playback controls.  
+The '<video>' element embeds media players with playback controls.  
 Supports multiple formats via <source> tags for cross-browser compatibility.  
 ---
 ### **2. JS Playback Control**  
